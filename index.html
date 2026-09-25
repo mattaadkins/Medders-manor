@@ -5,283 +5,266 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Medders Manor Fantasy Football :: League History</title>
 <style>
-:root{
-  --page-bg-1:#0B3E73; --page-bg-2:#1E6FC2;
-  --panel:#FFFFFF; --panel-alt:#EAF3FB; --panel-alt2:#DCEBFA;
-  --border:#8FB3D9; --border-dark:#5A85B3;
-  --ink:#16232E; --muted:#4C6178; --dim:#7C8FA1;
-  --link:#0033CC; --link-visited:#551A8B;
-  --gold-1:#FCE6A8; --gold-2:#E8A93D; --gold-3:#8A5A0F;
-  --red:#C21F2E; --green:#2E7D46;
-  --sans:Verdana,Geneva,Arial,Helvetica,sans-serif;
-  --head:"Trebuchet MS",Tahoma,Arial,sans-serif;
-  --mono:"Courier New",Courier,monospace;
-}
-*{box-sizing:border-box}
 body{
-  margin:0;padding:34px 14px 60px;
-  background-color:var(--page-bg-2);
-  background-image:
-    repeating-linear-gradient(135deg, rgba(255,255,255,.06) 0px, rgba(255,255,255,.06) 2px, transparent 2px, transparent 14px),
-    linear-gradient(180deg, var(--page-bg-1) 0%, var(--page-bg-2) 45%, var(--page-bg-1) 100%);
-  background-attachment:fixed;
-  font-family:var(--sans);color:var(--ink);font-size:13px;line-height:1.55;
+  margin:0;padding:18px 0 30px;
+  background-color:#1B5A9C;
+  background-image:repeating-linear-gradient(45deg, #1D60A6 0px, #1D60A6 2px, #1B5A9C 2px, #1B5A9C 6px);
+  font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;font-size:12px;line-height:1.45;color:#1A1A1A;
 }
-a{color:var(--link)}
-a:visited{color:var(--link-visited)}
-.wrap{
-  max-width:960px;margin:0 auto;background:var(--panel);
-  border:3px solid #FFFFFF;
-  -webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;
-  box-shadow:0 0 0 1px var(--border-dark), 4px 4px 14px rgba(0,0,0,.45);
-  overflow:hidden;
+a{color:#0033CC}
+a:visited{color:#551A8B}
+a:hover{color:#CC0000}
+
+#container{
+  width:900px;margin:0 auto;border:1px solid #0A2A4D;
+  background:#FFFFFF linear-gradient(90deg, #E6F0FA 0px, #E6F0FA 200px, #8FB3D9 200px, #8FB3D9 201px, #FFFFFF 201px);
 }
 
-/* ---------- ticker ---------- */
-.ticker{
-  background:#08243F;color:#B9E1FF;font-family:var(--mono);font-size:12px;
-  padding:5px 0;border-bottom:2px solid var(--border-dark);
+#ticker{
+  background:#0A2A4D;color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:bold;
+  padding:3px 0;border-bottom:1px solid #000000;
 }
-.ticker marquee{white-space:nowrap}
-.ticker b{color:#FFDE7A}
+#ticker span{color:#FFD24A}
 
-/* ---------- header ---------- */
-.header{
-  padding:26px 30px 22px;
-  background:#1E6FC2;
-  background-image:linear-gradient(180deg, #4C97DE 0%, #1E6FC2 45%, #0B3E73 100%);
-  border-bottom:4px solid var(--gold-2);
-  position:relative;
+#header{
+  height:92px;padding:0 18px;
+  background:linear-gradient(180deg, #4E9BE3 0%, #2F80CF 50%, #1C66B2 50%, #154F8C 100%);
+  border-bottom:3px solid #E8A93D;
 }
-.header .est{
-  position:absolute;top:16px;right:18px;
-  background:linear-gradient(180deg,#FFF6DC,var(--gold-2) 60%,var(--gold-3));
-  color:#3E2A05;font-family:var(--head);font-weight:bold;font-size:11px;
-  padding:6px 12px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;
-  border:1px solid #6E4A11;box-shadow:0 1px 0 rgba(255,255,255,.6) inset, 2px 2px 4px rgba(0,0,0,.35);
-  text-transform:uppercase;letter-spacing:.04em;
+#header h1{
+  float:left;margin:18px 0 0;
+  font-family:"Trebuchet MS",Tahoma,Arial,sans-serif;font-size:34px;font-weight:bold;line-height:1;
+  color:#FFFFFF;text-shadow:2px 2px 0 #0A2A4D;
 }
-h1{
-  font-family:var(--head);font-size:40px;margin:0 0 6px;font-weight:bold;
-  color:#FFFFFF;text-shadow:2px 2px 0 #0A3A6B, 2px 2px 3px rgba(0,0,0,.55);
-  letter-spacing:-.01em;
+#header h1 small{
+  display:block;margin-top:7px;
+  font-family:Verdana,Arial,sans-serif;font-size:11px;font-weight:bold;
+  color:#CFE6FA;text-shadow:1px 1px 0 #0A2A4D;
 }
-h1 .sm{display:block;font-size:14px;color:#CFE6FA;text-shadow:1px 1px 2px rgba(0,0,0,.5);
-  font-family:var(--sans);font-weight:normal;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
-.dek{color:#E7F2FC;font-size:13.5px;max-width:60ch;margin:10px 0 0;text-shadow:1px 1px 2px rgba(0,0,0,.4)}
-
-/* ---------- nav tabs ---------- */
-.tabs{background:#CFE4F7;padding:10px 24px 0;border-bottom:2px solid var(--border-dark)}
-.tabs a{
-  display:inline-block;font-family:var(--head);font-weight:bold;font-size:12px;
-  color:#0B3E73;text-decoration:none;padding:8px 18px 9px;margin-right:4px;
-  background:linear-gradient(180deg,#FFFFFF,#CFE4F7 90%);
-  border:1px solid var(--border-dark);border-bottom:none;
-  -webkit-border-radius:6px 6px 0 0;-moz-border-radius:6px 6px 0 0;border-radius:6px 6px 0 0;
-  position:relative;top:2px;
-}
-.tabs a.active{background:var(--panel);color:var(--red)}
-
-/* ---------- body sections ---------- */
-.section{padding:26px 30px}
-.section + .section{border-top:2px dashed var(--border)}
-.section-title{
-  font-family:var(--head);font-size:20px;font-weight:bold;color:#0B3E73;
-  margin:0 0 4px;padding-bottom:8px;border-bottom:3px solid var(--gold-2);
-}
-.section-title .n{
-  font-family:var(--mono);font-size:11px;color:var(--red);font-weight:bold;
-  letter-spacing:.08em;margin-right:8px;
-}
-.sub{color:var(--muted);margin:8px 0 20px;font-size:12.5px}
-
-/* ---------- kpi boxes ---------- */
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
-.kpi{
-  background:linear-gradient(180deg,#FFFFFF,var(--panel-alt2));
-  border:1px solid var(--border);-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;
-  box-shadow:0 1px 0 #fff inset, 1px 2px 4px rgba(0,0,0,.15);
-  padding:12px 12px 10px;text-align:center;
-}
-.kpi .v{font-family:var(--head);font-size:24px;font-weight:bold;color:var(--red)}
-.kpi .k{font-size:10.5px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
-
-/* ---------- champion plaques ---------- */
-.champs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.champ{
-  background:var(--panel-alt);border:1px solid var(--border);
-  -webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px;
-  box-shadow:2px 2px 5px rgba(0,0,0,.18);
-  padding:16px 16px 14px;position:relative;
-}
-.champ.current{
-  background:linear-gradient(180deg,var(--gold-1),#FBD98A 60%,var(--gold-2));
-  border:1px solid var(--gold-3);
-}
-.champ .yr{font-family:var(--mono);font-size:11px;color:var(--red);font-weight:bold;letter-spacing:.08em}
-.champ .who{font-family:var(--head);font-size:20px;font-weight:bold;margin:6px 0 2px;color:#0B3E73}
-.champ .rec{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
-.champ p{font-size:12px;color:var(--ink);margin:10px 0 0;line-height:1.5}
-.ribbon{
-  position:absolute;top:-6px;right:10px;
-  background:linear-gradient(180deg,#E43B4A,var(--red));color:#fff;
-  font-family:var(--head);font-size:10px;font-weight:bold;letter-spacing:.06em;
-  padding:4px 10px;box-shadow:1px 2px 3px rgba(0,0,0,.35);
-  -webkit-border-radius:0 0 4px 4px;-moz-border-radius:0 0 4px 4px;border-radius:0 0 4px 4px;
+#header .est{
+  float:right;margin-top:24px;padding:6px 10px;
+  background:linear-gradient(180deg, #FCE39A 0%, #F4C65A 50%, #E8A93D 50%, #D4912A 100%);
+  border:2px outset #F4C65A;
+  font-family:"Trebuchet MS",Arial,sans-serif;font-size:12px;font-weight:bold;line-height:1.2;
+  color:#3E2A05;text-align:center;
 }
 
-/* ---------- table ---------- */
-.tablewrap{overflow-x:auto;border:1px solid var(--border-dark);-webkit-border-radius:6px;-moz-border-radius:6px;border-radius:6px}
-table{border-collapse:collapse;width:100%;font-size:12.5px;min-width:560px}
-thead th{
-  font-family:var(--head);font-size:11.5px;font-weight:bold;color:#fff;text-align:left;
-  background:linear-gradient(180deg,#4C97DE,#1E6FC2);
-  padding:9px 12px;border-bottom:2px solid var(--border-dark);white-space:nowrap;
+#navbar{
+  height:26px;padding:0 12px;
+  background:linear-gradient(180deg, #FFFFFF 0%, #E3EEF9 50%, #CFE0F2 50%, #BCD3EC 100%);
+  border-bottom:1px solid #6F98C4;
+  font-size:11px;font-weight:bold;line-height:26px;color:#6F98C4;
 }
-thead th.num{text-align:right}
-tbody td{padding:8px 12px;border-bottom:1px solid var(--border)}
-tbody tr:nth-child(odd){background:var(--panel-alt)}
-tbody tr:hover td{background:#FFF4CE}
-.num{font-family:var(--mono);text-align:right;white-space:nowrap}
-.rk{font-family:var(--mono);color:var(--muted);width:26px}
-.who b{font-weight:bold;color:#0B3E73}
-.who .hd{display:block;font-size:10.5px;color:var(--dim)}
-.tag{
-  display:inline-block;font-family:var(--head);font-size:9.5px;font-weight:bold;
-  letter-spacing:.05em;padding:2px 7px;-webkit-border-radius:9px;-moz-border-radius:9px;border-radius:9px;
-  margin-left:6px;vertical-align:1px;text-transform:uppercase;
-}
-.tag.ch{background:var(--gold-2);color:#3E2A05;border:1px solid var(--gold-3)}
-.tag.ru{background:#DCEBFA;color:#0B3E73;border:1px solid var(--border)}
+#navbar a{color:#0B3E73;text-decoration:none;padding:0 6px}
+#navbar a:hover{color:#CC0000;text-decoration:underline}
+#navbar a.on{color:#CC0000}
+#navbar #today{float:right;color:#4C6178;font-weight:normal}
 
-/* ---------- footer ---------- */
-.footer{
-  background:#EAF3FB;border-top:2px solid var(--border-dark);
-  padding:20px 30px;font-size:11px;color:var(--muted);text-align:center;
+#content{float:right;width:699px;padding:12px 14px 4px}
+#sidebar{float:left;width:200px;padding:12px 10px 4px}
+#content,#sidebar{box-sizing:border-box}
+.clear{clear:both;height:0;overflow:hidden}
+
+.box{border:1px solid #6F98C4;background:#FFFFFF;margin-bottom:12px}
+.box h2{
+  margin:0;padding:4px 7px;
+  background:linear-gradient(180deg, #4E9BE3 0%, #2F80CF 50%, #1C66B2 50%, #1A5EA6 100%);
+  border-bottom:1px solid #0B3E73;
+  font-family:Verdana,Arial,sans-serif;font-size:11px;font-weight:bold;color:#FFFFFF;
 }
-.counter{
-  display:inline-block;background:#000;color:#39FF6A;font-family:var(--mono);
-  font-size:14px;letter-spacing:3px;padding:6px 10px;border:2px solid #333;
-  -webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;margin:10px 0;
+.box .inner{padding:8px}
+.box p{margin:0 0 8px}
+.box p:last-child{margin-bottom:0}
+
+.menu{list-style:none;margin:0;padding:0}
+.menu li{padding:4px 2px;border-bottom:1px dotted #8FB3D9}
+.menu li:last-child{border-bottom:none}
+.menu li:before{content:"\00BB\00A0";color:#E8A93D;font-weight:bold}
+
+.facts{width:100%;border-collapse:collapse;font-size:11px}
+.facts td{padding:3px 2px;border-bottom:1px dotted #8FB3D9}
+.facts tr:last-child td{border-bottom:none}
+.facts td.v{text-align:right;font-weight:bold;color:#CC0000}
+
+.box.gold{border-color:#B07A1C}
+.box.gold h2{
+  background:linear-gradient(180deg, #FCE39A 0%, #F4C65A 50%, #E8A93D 50%, #D4912A 100%);
+  border-bottom-color:#8A5A0F;color:#3E2A05;
 }
-.footer .fine{margin-top:10px;font-style:italic;color:var(--dim)}
-.badges{margin-top:12px}
-.badge{
-  display:inline-block;font-family:var(--head);font-size:9.5px;font-weight:bold;
-  background:linear-gradient(180deg,#fff,#DCEBFA);border:1px solid var(--border-dark);
-  color:#0B3E73;padding:3px 8px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;margin:0 3px;
+.box.gold .inner{background:#FFF8DC}
+.champ-name{font-family:"Trebuchet MS",Arial,sans-serif;font-size:22px;font-weight:bold;color:#0B3E73;margin:0 0 2px}
+.champ-meta{font-size:11px;color:#4C6178;margin:0 0 8px}
+
+.grid{width:100%;border-collapse:collapse;font-size:11px}
+.grid th{
+  padding:4px 6px;text-align:left;white-space:nowrap;
+  background:linear-gradient(180deg, #F4F9FE 0%, #DCEBFA 50%, #C9DDF3 50%, #B9D3EE 100%);
+  border:1px solid #8FB3D9;color:#0B3E73;font-weight:bold;
+}
+.grid td{padding:4px 6px;border:1px solid #C5D9EE}
+.grid tbody tr:nth-child(even) td{background:#F0F6FC}
+.grid tbody tr:hover td{background:#FFFFCC}
+.grid tbody tr.cur td{background:#FFF8DC;font-weight:bold}
+.grid .n{text-align:right;white-space:nowrap}
+.grid .team{display:block;font-size:10px;color:#6E7F90;font-weight:normal}
+.tbl{overflow-x:auto}
+.tag{background:#CC0000;color:#FFFFFF;font-size:9px;font-weight:bold;padding:0 3px;margin-left:4px}
+
+#footer{
+  clear:both;border-top:1px solid #6F98C4;background:#E6F0FA;
+  padding:12px 10px 14px;text-align:center;font-size:10px;color:#4C6178;
+}
+.counter{display:inline-block;margin:6px 0 4px;border:1px solid #555555;background:#000000;padding:2px}
+.counter span{
+  display:inline-block;width:13px;margin:0 1px;background:#222222;border:1px solid #444444;
+  font-family:"Courier New",Courier,monospace;font-size:14px;font-weight:bold;line-height:18px;color:#FFFFFF;
+}
+.buttons{margin:8px 0}
+.b80{
+  display:inline-block;width:80px;height:15px;margin:0 2px;border:1px solid #000000;
+  font-family:Verdana,Arial,sans-serif;font-size:8px;line-height:13px;text-align:left;overflow:hidden;
+  vertical-align:middle;background:#FFFFFF;
+}
+.b80 b{display:inline-block;height:13px;padding:0 3px;margin:1px;color:#FFFFFF}
+.b80 i{font-style:normal;color:#000000;padding-left:2px}
+.b80.w3c b{background:#003366}
+.b80.ff b{background:#E66000}
+.b80.rss b{background:#FF6600}
+
+@media (max-width:920px){
+  body{padding:0}
+  #container{width:auto;border:0;background:#FFFFFF}
+  #header{height:auto;overflow:hidden;padding-bottom:14px}
+  #header h1{font-size:28px}
+  #navbar #today{display:none}
+  #content,#sidebar{float:none;width:auto}
+  #sidebar{background:#E6F0FA;border-top:1px solid #8FB3D9}
 }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div id="container">
 
-  <div class="ticker">
+  <div id="ticker">
     <marquee behavior="scroll" scrollamount="4">
-      &raquo;&raquo; WELCOME TO MEDDERS MANOR FANTASY FOOTBALL &laquo;&laquo; &nbsp; <b>EST. 2008</b> &nbsp; &raquo;&raquo; [LATEST HEADLINE GOES HERE] &nbsp; &laquo;&laquo; &nbsp; SITE LAST UPDATED [MONTH YEAR]
+      Welcome to the official home of Medders Manor Fantasy Football! &nbsp;&nbsp;&bull;&nbsp;&nbsp; <span>[LATEST HEADLINE]</span> &nbsp;&nbsp;&bull;&nbsp;&nbsp; [SECOND HEADLINE]
     </marquee>
   </div>
 
-  <div class="header">
-    <span class="est">Since<br>2008</span>
-    <h1>Medders Manor<span class="sm">Fantasy Football &middot; League History &amp; Records</span></h1>
-    <p class="dek">The official record book. Champions, standings, and the receipts, going all the way back to 2008.</p>
+  <div id="header">
+    <h1>Medders Manor<small>Fantasy Football Keeper League</small></h1>
+    <div class="est">EST.<br>2008</div>
   </div>
 
-  <div class="tabs">
-    <a href="#champions" class="active">Champions</a>
+  <div id="navbar">
+    <span id="today"></span>
+    <a href="#top" class="on">Home</a> |
+    <a href="#champions">Champions</a> |
     <a href="#standings">Standings</a>
-    <a href="#rivalries">Rivalries</a>
-    <a href="#rules">League Rules</a>
   </div>
 
-  <div class="section">
-    <div class="kpis">
-      <div class="kpi"><div class="v">[N]</div><div class="k">Seasons Played</div></div>
-      <div class="kpi"><div class="v">[NAME]</div><div class="k">Most Titles</div></div>
-      <div class="kpi"><div class="v">[SCORE]</div><div class="k">Highest Score Ever</div></div>
-      <div class="kpi"><div class="v">[NAME]</div><div class="k">Defending Champ</div></div>
-    </div>
-  </div>
+  <div id="content">
 
-  <div class="section" id="champions">
-    <h2 class="section-title"><span class="n">SEC. 01</span>Hall of Champions</h2>
-    <p class="sub">One plaque per title, oldest to newest. Add a new one when the trophy changes hands.</p>
-    <div class="champs">
-      <div class="champ current">
-        <span class="ribbon">CHAMPION</span>
-        <div class="yr">[LATEST YEAR]</div>
-        <div class="who">[Champion Name]</div>
-        <div class="rec">[Record] &middot; beat [Runner-up] in the final</div>
+    <div class="box gold" id="champion">
+      <h2>Reigning Champion</h2>
+      <div class="inner">
+        <p class="champ-name">[Champion Name]</p>
+        <p class="champ-meta">[YEAR] Champion &middot; [Team Name] &middot; [W-L] regular season</p>
         <p>[A line or two on how the title went down.]</p>
       </div>
-      <div class="champ">
-        <div class="yr">[YEAR]</div>
-        <div class="who">[Champion Name]</div>
-        <div class="rec">[Record]</div>
-        <p>[Notes.]</p>
-      </div>
-      <div class="champ">
-        <div class="yr">2008</div>
-        <div class="who">[Founding Champion]</div>
-        <div class="rec">[Record]</div>
-        <p>Where it all began.</p>
+    </div>
+
+    <div class="box" id="champions">
+      <h2>Hall of Champions</h2>
+      <div class="inner tbl">
+        <table class="grid">
+          <thead>
+            <tr><th>Year</th><th>Champion</th><th>Runner-Up</th><th class="n">Record</th></tr>
+          </thead>
+          <tbody>
+            <tr class="cur"><td>[YEAR]</td><td>[Champion Name]<span class="tag">CHAMP</span></td><td>[Runner-Up]</td><td class="n">[W-L]</td></tr>
+            <tr><td>[YEAR]</td><td>[Champion Name]</td><td>[Runner-Up]</td><td class="n">[W-L]</td></tr>
+            <tr><td>2008</td><td>[Founding Champion]</td><td>[Runner-Up]</td><td class="n">[W-L]</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
+
+    <div class="box" id="standings">
+      <h2>All-Time Standings</h2>
+      <div class="inner tbl">
+        <table class="grid">
+          <thead>
+            <tr><th>#</th><th>Manager</th><th class="n">W</th><th class="n">L</th><th class="n">Pct</th><th class="n">Titles</th><th class="n">Pts For</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><b>[Manager Name]</b><span class="team">[Team Name]</span></td><td class="n">[W]</td><td class="n">[L]</td><td class="n">[.000]</td><td class="n">[T]</td><td class="n">[PF]</td></tr>
+            <tr><td>2</td><td><b>[Manager Name]</b><span class="team">[Team Name]</span></td><td class="n">[W]</td><td class="n">[L]</td><td class="n">[.000]</td><td class="n">[T]</td><td class="n">[PF]</td></tr>
+            <tr><td>3</td><td><b>[Manager Name]</b><span class="team">[Team Name]</span></td><td class="n">[W]</td><td class="n">[L]</td><td class="n">[.000]</td><td class="n">[T]</td><td class="n">[PF]</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
 
-  <div class="section" id="standings">
-    <h2 class="section-title"><span class="n">SEC. 02</span>All-Time Standings</h2>
-    <p class="sub">Every manager's career record since 2008.</p>
-    <div class="tablewrap">
-      <table>
-        <thead>
-          <tr>
-            <th class="rk">#</th>
-            <th>Manager</th>
-            <th class="num">W</th>
-            <th class="num">L</th>
-            <th class="num">Titles</th>
-            <th class="num">Pts For</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="rk">1</td>
-            <td class="who"><b>[Manager Name]</b><span class="hd">[Team name]</span><span class="tag ch">Champ</span></td>
-            <td class="num">[W]</td>
-            <td class="num">[L]</td>
-            <td class="num">[T]</td>
-            <td class="num">[PF]</td>
-          </tr>
-          <tr>
-            <td class="rk">2</td>
-            <td class="who"><b>[Manager Name]</b><span class="hd">[Team name]</span></td>
-            <td class="num">[W]</td>
-            <td class="num">[L]</td>
-            <td class="num">[T]</td>
-            <td class="num">[PF]</td>
-          </tr>
-        </tbody>
-      </table>
+  <div id="sidebar">
+
+    <div class="box">
+      <h2>League Menu</h2>
+      <div class="inner">
+        <ul class="menu">
+          <li><a href="#champion">Reigning Champion</a></li>
+          <li><a href="#champions">Hall of Champions</a></li>
+          <li><a href="#standings">All-Time Standings</a></li>
+        </ul>
+      </div>
     </div>
+
+    <div class="box">
+      <h2>League Info</h2>
+      <div class="inner">
+        <table class="facts">
+          <tr><td>Founded</td><td class="v">2008</td></tr>
+          <tr><td>Format</td><td class="v">Keeper</td></tr>
+          <tr><td>Teams</td><td class="v">[N]</td></tr>
+          <tr><td>Seasons</td><td class="v">[N]</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2>Record Book</h2>
+      <div class="inner">
+        <table class="facts">
+          <tr><td>Most Titles</td><td class="v">[NAME]</td></tr>
+          <tr><td>High Score</td><td class="v">[SCORE]</td></tr>
+        </table>
+      </div>
+    </div>
+
   </div>
 
-  <div class="footer">
-    Medders Manor Fantasy Football &middot; League site since 2008
-    <br>
-    <span class="counter">007342</span>
-    <br>visitors since we stopped using a real hit counter
-    <div class="badges">
-      <span class="badge">Y2K Compliant</span>
-      <span class="badge">1024&times;768 Optimized</span>
-      <span class="badge">100% Duct Tape</span>
+  <div class="clear"></div>
+
+  <div id="footer">
+    You are visitor number<br>
+    <span class="counter"><span>0</span><span>0</span><span>7</span><span>3</span><span>4</span><span>2</span></span>
+    <div class="buttons">
+      <span class="b80 w3c"><b>W3C</b><i>XHTML 1.0</i></span>
+      <span class="b80 ff"><b>GET</b><i>FIREFOX 3</i></span>
+      <span class="b80 rss"><b>RSS</b><i>FEED</i></span>
     </div>
-    <p class="fine">Fantasy data provided by Yahoo Fantasy (pending API approval). Best viewed while ignoring the marquee.</p>
+    &copy; 2008&ndash;2026 Medders Manor Fantasy Football League. All rights reserved.<br>
+    Last updated [MONTH DD, YYYY]
   </div>
 
 </div>
+
+<script>
+document.getElementById("today").innerHTML = new Date().toLocaleDateString("en-US", {weekday:"long", month:"long", day:"numeric", year:"numeric"});
+</script>
 
 </body>
 </html>
